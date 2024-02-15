@@ -1,0 +1,45 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>io.github.swan-geese.pretty-json</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Pretty JSON</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="464456947@qq.com" url="https://www.996dog.com">swan-geese</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    This is a json formatting plugin<br>
+    <em>1. Plugin Center Download `Pretty JSON` plugin</em><br>
+    <em>2.1 Choose data -> right Click Menu `Pretty JSON`  Or Use a Shortcut Key `Command + J`</em><br>
+    <em>2.2 Choose data -> right Click Menu `Indented JSON`  Or Use a Shortcut Key `Ctrl + Command + J`</em><br>
+    <em>3. go </em><br>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <actions>
+        <action id="PrettyJsonAction" class="io.github.swangeese.prettyjson.PrettyJsonAction" text="Pretty JSON">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta J"/>
+        </action>
+        <action id="IndentedJsonAction" class="io.github.swangeese.prettyjson.IndentedJsonAction" text="Indented JSON">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl meta i"/>
+        </action>
+    </actions>
+
+
+</idea-plugin>
